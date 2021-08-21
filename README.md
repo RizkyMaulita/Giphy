@@ -15,4 +15,4 @@
 
 ## Deployment
 
-> This project has deployed in [Netlify](https://app.netlify.com/sites/sharp-booth-9b11d8/deploys)
+> This project has deployed in [Netlify](https://sharp-booth-9b11d8.netlify.app/)
