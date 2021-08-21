@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { List, Search } from '../components'
-import { fetchGifs } from '../store/actions/gif'
+import { fetchGifs, resetGif } from '../store/actions/gif'
 import { useDispatch, useSelector } from 'react-redux'
 
 const Giphy = () => {
@@ -14,8 +14,11 @@ const Giphy = () => {
   useEffect(() => {
     if (pathname === '/iron-mans') {
       setTitle('IRON MAN GIPHY')
-      getGifs()
+      getGifs('', 1)
     } else {
+      (async () => {
+        await dispatch(resetGif())
+      })()
       setTitle('SEARCH YOUR GIPHY')
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

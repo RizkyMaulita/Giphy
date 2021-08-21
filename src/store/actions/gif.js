@@ -53,3 +53,19 @@ export const fetchGifs = ({ keyword, page = 1 }) => {
     }
   }
 }
+
+export const resetGif = () => {
+  return dispatch => {
+    const payload = {
+      gifs: [],
+      keyword: '',
+      totalPages: 1,
+      totalData: 1,
+      currentPage: 1,
+      loading: false,
+      error: false
+    }
+    dispatch(getGifs(payload))
+    return ;
+  }
+}
