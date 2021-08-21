@@ -16,11 +16,13 @@ const List = ({ keyword, error, gifs, loading, currentPage, totalPages, getGifs 
             </div>
             {
               gifs.length
-              ? <CPagination className="container mt-3"
-                  activePage={currentPage}
-                  pages={totalPages}
-                  onActivePageChange={numberPage => getGifs(keyword, numberPage)}
-                />
+              ? <div className="d-flex justify-content-end px-5 py-3">
+                  <CPagination
+                    activePage={currentPage}
+                    pages={totalPages}
+                    onActivePageChange={numberPage => getGifs(keyword, numberPage)}
+                  />
+                </div>
               : <NotFound />
             }
           </div>
