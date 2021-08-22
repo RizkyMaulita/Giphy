@@ -27,7 +27,7 @@ export const fetchGifs = ({ keyword, page = 1 }) => {
     try {
       dispatch(setLoading(true))
       dispatch(setError(false))
-      const { data } = await API().get(`/search?api_key=${REACT_APP_GIPHY_API_KEY}&limit=9&q=${keyword || 'ironman'}&offset=${page - 1}`)
+      const { data } = await API().get(`/search?api_key=${REACT_APP_GIPHY_API_KEY}&limit=9&q=${keyword || 'ironman'}&offset=${(page - 1) * 9}`)
       if (data) {
         const { data: gifs, pagination } = data
         const payload = {
